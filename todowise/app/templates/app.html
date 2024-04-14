@@ -1,0 +1,10 @@
+<h1>Todowise app</h1>
+
+<p>Current user: {{user.first_name}} (<a href="{% url 'app_logout' %}">Logout</a>)</p>
+
+<h3>TDOD Lists</h3>
+<ul>
+    {% for list in user.lists.all %}
+    <li><a href="{% url 'todo_list' list.id %}">{{ list.title }}</a></li>
+    {% endfor %}
+</ul>
